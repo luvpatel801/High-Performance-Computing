@@ -1,0 +1,18 @@
+left_boundary = 2.000000
+lower_boundary = 7.200000
+sann 0
+next
+shape
+2  1.8281786365
+3  2.6699455466
+4  3.4050810221
+5  3.3124331744
+6  3.3996161761
+7  3.3463129486
+8  3.2663426898
+9  3.4415052882
+sann 1
+text 1.488853 2.853315
+Speedup
+end_text
+title_x = Number of Threads

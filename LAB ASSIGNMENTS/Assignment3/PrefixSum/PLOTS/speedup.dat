@@ -1,0 +1,24 @@
+left_boundary = 2.000000
+lower_boundary = 7.200000
+sann 0
+COLOR blue
+next
+shape
+15  1.5
+16  1.76
+17  1.6
+18  2.07
+COLOR red
+next
+shape
+15  1.23
+16  1.78
+17  1.47
+18  1.31
+sann 1
+anno 17.317272 1.431979 INCLUSIVE
+anno 17.130264 1.684944 EXCLUSIVE
+text 1.453822 3.776446
+SPEEDUP
+end_text
+title_x = ARRAY SIZE (LOG BASE 2)

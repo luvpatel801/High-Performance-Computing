@@ -1,0 +1,29 @@
+left_boundary = 2.000000
+lower_boundary = 7.200000
+sann 0
+COLOR pink
+next
+shape
+15  0.0021
+16  0.0041
+17  0.0056
+COLOR red
+next
+shape
+15  0.0014
+16  0.0023
+17  0.0035
+COLOR blue
+next
+shape
+15  0.0017
+16  0.0023
+17  0.0038
+sann 1
+anno 16.386175 0.004758 SERIAL
+anno 16.680855 0.003046 EXCLUSIVE
+anno 16.708055 0.003468 INCLUSIVE
+text 1.243631 3.404795
+TIME (SEC)
+end_text
+title_x = ARRAY SIZE (LOG BASE 2)
