@@ -1,0 +1,284 @@
+Output
+For number of threads = 1
+Filename : ecase1.txt
+SerialTime: 0.000371
+ParallelTime: 0.000334
+Speedup :1.110378
+
+
+Filename : ecase2.txt
+SerialTime: 0.000322
+ParallelTime: 0.000275
+Speedup :1.169444
+
+
+Filename : ecase3.txt
+SerialTime: 0.068130
+ParallelTime: 0.055042
+Speedup :1.237778
+
+
+Filename : mcase.txt
+SerialTime: 0.004323
+ParallelTime: 0.004313
+Speedup :1.002158
+
+
+Filename : hcase.txt
+SerialTime: 21.123579
+ParallelTime: 21.327317
+Speedup :0.990447
+
+
+Filename : 16x16.txt
+SerialTime: 1.266641
+ParallelTime: 1.270904
+Speedup :0.996645
+
+
+Filename : 25x25.txt
+SerialTime: 4.994336
+ParallelTime: 5.073587
+Speedup :0.984380
+
+
+Filename : 64x64.txt
+SerialTime: 42.934602
+ParallelTime: 43.173908
+Speedup :0.994457
+
+
+Filename : impcase.txt
+SerialTime: 0.000118
+No Serial result!
+ParallelTime: 0.000097
+No Parallel result!
+Speedup :1.217213
+
+
+For number of threads = 2
+Filename : ecase1.txt
+SerialTime: 0.000157
+ParallelTime: 0.000196
+Speedup :0.803519
+
+
+Filename : ecase2.txt
+SerialTime: 0.000169
+ParallelTime: 0.000197
+Speedup :0.854970
+
+
+Filename : ecase3.txt
+SerialTime: 0.041271
+ParallelTime: 0.026231
+Speedup :1.573381
+
+
+Filename : mcase.txt
+SerialTime: 0.003286
+ParallelTime: 0.003241
+Speedup :1.013730
+
+
+Filename : hcase.txt
+SerialTime: 21.011386
+ParallelTime: 11.031273
+Speedup :1.904711
+
+
+Filename : 16x16.txt
+SerialTime: 1.272648
+ParallelTime: 0.864042
+Speedup :1.472901
+
+
+Filename : 25x25.txt
+SerialTime: 5.038049
+ParallelTime: 4.995367
+Speedup :1.008544
+
+
+Filename : 64x64.txt
+SerialTime: 43.175535
+ParallelTime: 22.862607
+Speedup :1.888478
+
+
+Filename : impcase.txt
+SerialTime: 0.000120
+No Serial result!
+ParallelTime: 0.000158
+No Parallel result!
+Speedup :0.756374
+
+
+For number of threads = 4
+Filename : ecase1.txt
+SerialTime: 0.000158
+ParallelTime: 0.000214
+Speedup :0.736940
+
+
+Filename : ecase2.txt
+SerialTime: 0.000158
+ParallelTime: 0.000189
+Speedup :0.838190
+
+
+Filename : ecase3.txt
+SerialTime: 0.041165
+ParallelTime: 0.018403
+Speedup :2.236808
+
+
+Filename : mcase.txt
+SerialTime: 0.007428
+ParallelTime: 0.003502
+Speedup :2.120929
+
+
+Filename : hcase.txt
+SerialTime: 21.241433
+ParallelTime: 6.322146
+Speedup :3.359846
+
+
+Filename : 16x16.txt
+SerialTime: 1.271536
+ParallelTime: 0.369464
+Speedup :3.441569
+
+
+Filename : 25x25.txt
+SerialTime: 5.265887
+ParallelTime: 1.335297
+Speedup :3.943607
+
+
+Filename : 64x64.txt
+SerialTime: 42.990588
+ParallelTime: 12.534009
+Speedup :3.429915
+
+
+Filename : impcase.txt
+SerialTime: 0.000245
+No Serial result!
+ParallelTime: 0.000296
+No Parallel result!
+Speedup :0.828515
+
+
+For number of threads = 8
+Filename : ecase1.txt
+SerialTime: 0.000341
+ParallelTime: 0.000393
+Speedup :0.868470
+
+
+Filename : ecase2.txt
+SerialTime: 0.000344
+ParallelTime: 0.000452
+Speedup :0.761295
+
+
+Filename : ecase3.txt
+SerialTime: 0.069645
+ParallelTime: 0.017548
+Speedup :3.968814
+
+
+Filename : mcase.txt
+SerialTime: 0.004329
+ParallelTime: 0.003627
+Speedup :1.193693
+
+
+Filename : hcase.txt
+SerialTime: 21.180549
+ParallelTime: 3.751494
+Speedup :5.645896
+
+
+Filename : 16x16.txt
+SerialTime: 1.265421
+ParallelTime: 0.367580
+Speedup :3.442577
+
+
+Filename : 25x25.txt
+SerialTime: 4.936646
+ParallelTime: 0.634404
+Speedup :7.781546
+
+
+Filename : 64x64.txt
+SerialTime: 42.964137
+ParallelTime: 7.319730
+Speedup :5.869634
+
+
+Filename : impcase.txt
+SerialTime: 0.000118
+No Serial result!
+ParallelTime: 0.000229
+No Parallel result!
+Speedup :0.513624
+
+
+For number of threads = 12
+Filename : ecase1.txt
+SerialTime: 0.000159
+ParallelTime: 0.000338
+Speedup :0.469471
+
+
+Filename : ecase2.txt
+SerialTime: 0.000159
+ParallelTime: 0.000339
+Speedup :0.467897
+
+
+Filename : ecase3.txt
+SerialTime: 0.041019
+ParallelTime: 0.017612
+Speedup :2.329027
+
+
+Filename : mcase.txt
+SerialTime: 0.003239
+ParallelTime: 0.003923
+Speedup :0.825685
+
+
+Filename : hcase.txt
+SerialTime: 21.045291
+ParallelTime: 3.571032
+Speedup :5.893337
+
+
+Filename : 16x16.txt
+SerialTime: 1.275979
+ParallelTime: 0.400226
+Speedup :3.188149
+
+
+Filename : 25x25.txt
+SerialTime: 5.104899
+ParallelTime: 0.559655
+Speedup :9.121506
+
+
+Filename : 64x64.txt
+SerialTime: 43.222203
+ParallelTime: 6.079012
+Speedup :7.110071
+
+
+Filename : impcase.txt
+SerialTime: 0.000119
+No Serial result!
+ParallelTime: 0.000318
+No Parallel result!
+Speedup :0.375324

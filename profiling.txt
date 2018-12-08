@@ -1,0 +1,1639 @@
+//201501459 and 201501461
+
+SUMMARY
+                    Number of CALLS   RANK     MEMORY ACCESS TIME RANK
+ecase1.txt          1148                7           5    
+ecase2.txt          1148                7           5
+ecase3.txt          1011002             5           5
+mcase.txt           78078               6           5
+hcase.txt           522306887           1           2
+16x16.txt           15342639            4           4
+25x25.txt           65118044            3           3
+64x64.txt           293394233           2           1
+
+Flat profile:ecase1.txt
+
+Each sample counts as 0.01 seconds.
+ no time accumulated
+
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+  0.00      0.00     0.00     1148     0.00     0.00  possible
+  0.00      0.00     0.00      138     0.00     0.00  go_forward
+  0.00      0.00     0.00       62     0.00     0.00  go_backward
+  0.00      0.00     0.00       57     0.00     0.00  push_node
+  0.00      0.00     0.00       57     0.00     0.00  create_node
+  0.00      0.00     0.00       57     0.00     0.00  pop_node
+  0.00      0.00     0.00        1     0.00     0.00  solve_serial
+  0.00      0.00     0.00        1     0.00     0.00  create_list
+  0.00      0.00     0.00        1     0.00     0.00  print_sudoku
+  0.00      0.00     0.00        1     0.00     0.00  read_sudoku
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) no time propagated
+
+index % time    self  children    called     name
+                0.00    0.00     441/1148        create_list [8]
+                0.00    0.00     707/1148        solve_serial [7]
+[1]      0.0    0.00    0.00    1148         possible [1]
+-----------------------------------------------
+                0.00    0.00      48/138         create_list [8]
+                0.00    0.00      90/138         solve_serial [7]
+[2]      0.0    0.00    0.00     138         go_forward [2]
+-----------------------------------------------
+                0.00    0.00      62/62          solve_serial [7]
+[3]      0.0    0.00    0.00      62         go_backward [3]
+-----------------------------------------------
+                0.00    0.00      57/57          create_list [8]
+[4]      0.0    0.00    0.00      57         push_node [4]
+-----------------------------------------------
+                0.00    0.00      57/57          create_list [8]
+[5]      0.0    0.00    0.00      57         create_node [5]
+-----------------------------------------------
+                0.00    0.00       9/57          solve_serial [7]
+                0.00    0.00      48/57          create_list [8]
+[6]      0.0    0.00    0.00      57         pop_node [6]
+-----------------------------------------------
+                0.00    0.00       1/1           main [18]
+[7]      0.0    0.00    0.00       1         solve_serial [7]
+                0.00    0.00     707/1148        possible [1]
+                0.00    0.00      90/138         go_forward [2]
+                0.00    0.00      62/62          go_backward [3]
+                0.00    0.00       9/57          pop_node [6]
+                0.00    0.00       1/1           create_list [8]
+-----------------------------------------------
+                0.00    0.00       1/1           solve_serial [7]
+[8]      0.0    0.00    0.00       1         create_list [8]
+                0.00    0.00     441/1148        possible [1]
+                0.00    0.00      57/57          create_node [5]
+                0.00    0.00      57/57          push_node [4]
+                0.00    0.00      48/57          pop_node [6]
+                0.00    0.00      48/138         go_forward [2]
+-----------------------------------------------
+                0.00    0.00       1/1           main [18]
+[9]      0.0    0.00    0.00       1         print_sudoku [9]
+-----------------------------------------------
+                0.00    0.00       1/1           main [18]
+[10]     0.0    0.00    0.00       1         read_sudoku [10]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+   [4] push_node              [2] go_forward       [10] read_sudoku
+   [7] solve_serial           [8] create_list      [6] pop_node
+   [5] create_node            [1] possible
+   [3] go_backward        	  [9] print_sudoku
+   
+   
+   
+   Flat profile:ecase2.txt
+
+Each sample counts as 0.01 seconds.
+ no time accumulated
+
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+  0.00      0.00     0.00     1148     0.00     0.00  possible
+  0.00      0.00     0.00      138     0.00     0.00  go_forward
+  0.00      0.00     0.00       62     0.00     0.00  go_backward
+  0.00      0.00     0.00       57     0.00     0.00  push_node
+  0.00      0.00     0.00       57     0.00     0.00  create_node
+  0.00      0.00     0.00       57     0.00     0.00  pop_node
+  0.00      0.00     0.00        1     0.00     0.00  solve_serial
+  0.00      0.00     0.00        1     0.00     0.00  create_list
+  0.00      0.00     0.00        1     0.00     0.00  print_sudoku
+  0.00      0.00     0.00        1     0.00     0.00  read_sudoku
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) no time propagated
+
+index % time    self  children    called     name
+                0.00    0.00     441/1148        create_list [8]
+                0.00    0.00     707/1148        solve_serial [7]
+[1]      0.0    0.00    0.00    1148         possible [1]
+-----------------------------------------------
+                0.00    0.00      48/138         create_list [8]
+                0.00    0.00      90/138         solve_serial [7]
+[2]      0.0    0.00    0.00     138         go_forward [2]
+-----------------------------------------------
+                0.00    0.00      62/62          solve_serial [7]
+[3]      0.0    0.00    0.00      62         go_backward [3]
+-----------------------------------------------
+                0.00    0.00      57/57          create_list [8]
+[4]      0.0    0.00    0.00      57         push_node [4]
+-----------------------------------------------
+                0.00    0.00      57/57          create_list [8]
+[5]      0.0    0.00    0.00      57         create_node [5]
+-----------------------------------------------
+                0.00    0.00       9/57          solve_serial [7]
+                0.00    0.00      48/57          create_list [8]
+[6]      0.0    0.00    0.00      57         pop_node [6]
+-----------------------------------------------
+                0.00    0.00       1/1           main [18]
+[7]      0.0    0.00    0.00       1         solve_serial [7]
+                0.00    0.00     707/1148        possible [1]
+                0.00    0.00      90/138         go_forward [2]
+                0.00    0.00      62/62          go_backward [3]
+                0.00    0.00       9/57          pop_node [6]
+                0.00    0.00       1/1           create_list [8]
+-----------------------------------------------
+                0.00    0.00       1/1           solve_serial [7]
+[8]      0.0    0.00    0.00       1         create_list [8]
+                0.00    0.00     441/1148        possible [1]
+                0.00    0.00      57/57          create_node [5]
+                0.00    0.00      57/57          push_node [4]
+                0.00    0.00      48/57          pop_node [6]
+                0.00    0.00      48/138         go_forward [2]
+-----------------------------------------------
+                0.00    0.00       1/1           main [18]
+[9]      0.0    0.00    0.00       1         print_sudoku [9]
+-----------------------------------------------
+                0.00    0.00       1/1           main [18]
+[10]     0.0    0.00    0.00       1         read_sudoku [10]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+   [4] push_node              [2] go_forward       [10] read_sudoku
+   [7] solve_serial           [8] create_list      [6] pop_node
+   [5] create_node            [1] possible
+   [3] go_backward        	  [9] print_sudoku
+
+
+Flat profile:ecase3.txt
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+100.16      0.06     0.06  1011002     0.00     0.00  possible
+  0.00      0.06     0.00   112359     0.00     0.00  go_forward
+  0.00      0.06     0.00   112297     0.00     0.00  go_backward
+  0.00      0.06     0.00       15     0.00     0.00  push_node
+  0.00      0.06     0.00       15     0.00     0.00  create_node
+  0.00      0.06     0.00        9     0.00     0.00  pop_node
+  0.00      0.06     0.00        6     0.00     0.00  freeListElement
+  0.00      0.06     0.00        1     0.00    60.10  solve_serial
+  0.00      0.06     0.00        1     0.00     0.00  create_list
+  0.00      0.06     0.00        1     0.00     0.00  print_sudoku
+  0.00      0.06     0.00        1     0.00     0.00  read_sudoku
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 16.64% of 0.06 seconds
+
+index % time    self  children    called     name
+                0.00    0.00      63/1011002     create_list [4]
+                0.06    0.00 1010939/1011002     solve_serial [2]
+[1]    100.0    0.06    0.00 1011002         possible [1]
+-----------------------------------------------
+                0.00    0.06       1/1           main [3]
+[2]    100.0    0.00    0.06       1         solve_serial [2]
+                0.06    0.00 1010939/1011002     possible [1]
+                0.00    0.00       1/1           create_list [4]
+                0.00    0.00  112353/112359      go_forward [5]
+                0.00    0.00  112297/112297      go_backward [6]
+                0.00    0.00       3/9           pop_node [9]
+-----------------------------------------------
+                                                 <spontaneous>
+[3]    100.0    0.00    0.06                 main [3]
+                0.00    0.06       1/1           solve_serial [2]
+                0.00    0.00       6/6           freeListElement [10]
+                0.00    0.00       1/1           read_sudoku [12]
+                0.00    0.00       1/1           print_sudoku [11]
+-----------------------------------------------
+                0.00    0.00       1/1           solve_serial [2]
+[4]      0.0    0.00    0.00       1         create_list [4]
+                0.00    0.00      63/1011002     possible [1]
+                0.00    0.00      15/15          create_node [8]
+                0.00    0.00      15/15          push_node [7]
+                0.00    0.00       6/9           pop_node [9]
+                0.00    0.00       6/112359      go_forward [5]
+-----------------------------------------------
+                0.00    0.00       6/112359      create_list [4]
+                0.00    0.00  112353/112359      solve_serial [2]
+[5]      0.0    0.00    0.00  112359         go_forward [5]
+-----------------------------------------------
+                0.00    0.00  112297/112297      solve_serial [2]
+[6]      0.0    0.00    0.00  112297         go_backward [6]
+-----------------------------------------------
+                0.00    0.00      15/15          create_list [4]
+[7]      0.0    0.00    0.00      15         push_node [7]
+-----------------------------------------------
+                0.00    0.00      15/15          create_list [4]
+[8]      0.0    0.00    0.00      15         create_node [8]
+-----------------------------------------------
+                0.00    0.00       3/9           solve_serial [2]
+                0.00    0.00       6/9           create_list [4]
+[9]      0.0    0.00    0.00       9         pop_node [9]
+-----------------------------------------------
+                0.00    0.00       6/6           main [3]
+[10]     0.0    0.00    0.00       6         freeListElement [10]
+-----------------------------------------------
+                0.00    0.00       1/1           main [3]
+[11]     0.0    0.00    0.00       1         print_sudoku [11]
+-----------------------------------------------
+                0.00    0.00       1/1           main [3]
+[12]     0.0    0.00    0.00       1         read_sudoku [12]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+   [7] push_node             [10] freeListElement        [11] print_sudoku
+   [2] solve_serial          [5] go_forward       		 [12] read_sudoku
+   [8] create_node           [4] create_list             [9] pop_node
+   [6] go_backward        	 [1] possible
+   
+   
+   
+   
+Flat profile:mcase.txt
+
+Each sample counts as 0.01 seconds.
+ no time accumulated
+
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+  0.00      0.00     0.00    78078     0.00     0.00  possible
+  0.00      0.00     0.00     8701     0.00     0.00  go_forward
+  0.00      0.00     0.00     8645     0.00     0.00  go_backward
+  0.00      0.00     0.00       13     0.00     0.00  push_node
+  0.00      0.00     0.00       13     0.00     0.00  create_node
+  0.00      0.00     0.00        7     0.00     0.00  freeListElement
+  0.00      0.00     0.00        6     0.00     0.00  pop_node
+  0.00      0.00     0.00        1     0.00     0.00  solve_serial
+  0.00      0.00     0.00        1     0.00     0.00  create_list
+  0.00      0.00     0.00        1     0.00     0.00  print_sudoku
+  0.00      0.00     0.00        1     0.00     0.00  read_sudoku
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) no time propagated
+
+index % time    self  children    called     name
+                0.00    0.00      36/78078       create_list [9]
+                0.00    0.00   78042/78078       solve_serial [8]
+[1]      0.0    0.00    0.00   78078         possible [1]
+-----------------------------------------------
+                0.00    0.00       3/8701        create_list [9]
+                0.00    0.00    8698/8701        solve_serial [8]
+[2]      0.0    0.00    0.00    8701         go_forward [2]
+-----------------------------------------------
+                0.00    0.00    8645/8645        solve_serial [8]
+[3]      0.0    0.00    0.00    8645         go_backward [3]
+-----------------------------------------------
+                0.00    0.00      13/13          create_list [9]
+[4]      0.0    0.00    0.00      13         push_node [4]
+-----------------------------------------------
+                0.00    0.00      13/13          create_list [9]
+[5]      0.0    0.00    0.00      13         create_node [5]
+-----------------------------------------------
+                0.00    0.00       7/7           main [18]
+[6]      0.0    0.00    0.00       7         freeListElement [6]
+-----------------------------------------------
+                0.00    0.00       3/6           create_list [9]
+                0.00    0.00       3/6           solve_serial [8]
+[7]      0.0    0.00    0.00       6         pop_node [7]
+-----------------------------------------------
+                0.00    0.00       1/1           main [18]
+[8]      0.0    0.00    0.00       1         solve_serial [8]
+                0.00    0.00   78042/78078       possible [1]
+                0.00    0.00    8698/8701        go_forward [2]
+                0.00    0.00    8645/8645        go_backward [3]
+                0.00    0.00       3/6           pop_node [7]
+                0.00    0.00       1/1           create_list [9]
+-----------------------------------------------
+                0.00    0.00       1/1           solve_serial [8]
+[9]      0.0    0.00    0.00       1         create_list [9]
+                0.00    0.00      36/78078       possible [1]
+                0.00    0.00      13/13          create_node [5]
+                0.00    0.00      13/13          push_node [4]
+                0.00    0.00       3/6           pop_node [7]
+                0.00    0.00       3/8701        go_forward [2]
+-----------------------------------------------
+                0.00    0.00       1/1           main [18]
+[10]     0.0    0.00    0.00       1         print_sudoku [10]
+-----------------------------------------------
+                0.00    0.00       1/1           main [18]
+[11]     0.0    0.00    0.00       1         read_sudoku [11]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+   [4] push_node              [6] freeListElement        [10] print_sudoku
+   [8] solve_serial           [2] go_forward       		 [11] read_sudoku
+   [5] create_node            [9] create_list            [7] pop_node
+   [3] go_backward        	  [1] possible   
+   
+   
+   
+Flat profile:hcase.txt
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 79.76     17.20    17.20 522306887     0.00     0.00  possible
+ 15.70     20.59     3.39        1     3.39    21.40  solve_serial
+  2.35     21.09     0.51 58034061     0.00     0.00  go_backward
+  1.39     21.40     0.30 58034126     0.00     0.00  go_forward
+  0.21     21.44     0.05        1     0.05     0.05  print_sudoku
+  0.00     21.44     0.00       13     0.00     0.00  push_node
+  0.00     21.44     0.00       13     0.00     0.00  create_node
+  0.00     21.44     0.00        7     0.00     0.00  pop_node
+  0.00     21.44     0.00        6     0.00     0.00  freeListElement
+  0.00     21.44     0.00        1     0.00     0.00  create_list
+  0.00     21.44     0.00        1     0.00     0.00  read_sudoku
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.05% of 21.44 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]    100.0    0.00   21.44                 main [1]
+                3.39   18.01       1/1           solve_serial [2]
+                0.05    0.00       1/1           print_sudoku [6]
+                0.00    0.00       6/6           freeListElement [11]
+                0.00    0.00       1/1           read_sudoku [12]
+-----------------------------------------------
+                3.39   18.01       1/1           main [1]
+[2]     99.8    3.39   18.01       1         solve_serial [2]
+               17.20    0.00 522306869/522306887     possible [3]
+                0.51    0.00 58034061/58034061     go_backward [4]
+                0.30    0.00 58034125/58034126     go_forward [5]
+                0.00    0.00       1/1           create_list [7]
+                0.00    0.00       6/7           pop_node [10]
+-----------------------------------------------
+                0.00    0.00      18/522306887     create_list [7]
+               17.20    0.00 522306869/522306887     solve_serial [2]
+[3]     80.2   17.20    0.00 522306887         possible [3]
+-----------------------------------------------
+                0.51    0.00 58034061/58034061     solve_serial [2]
+[4]      2.4    0.51    0.00 58034061         go_backward [4]
+-----------------------------------------------
+                0.00    0.00       1/58034126     create_list [7]
+                0.30    0.00 58034125/58034126     solve_serial [2]
+[5]      1.4    0.30    0.00 58034126         go_forward [5]
+-----------------------------------------------
+                0.05    0.00       1/1           main [1]
+[6]      0.2    0.05    0.00       1         print_sudoku [6]
+-----------------------------------------------
+                0.00    0.00       1/1           solve_serial [2]
+[7]      0.0    0.00    0.00       1         create_list [7]
+                0.00    0.00      18/522306887     possible [3]
+                0.00    0.00       1/58034126     go_forward [5]
+                0.00    0.00      13/13          create_node [9]
+                0.00    0.00      13/13          push_node [8]
+                0.00    0.00       1/7           pop_node [10]
+-----------------------------------------------
+                0.00    0.00      13/13          create_list [7]
+[8]      0.0    0.00    0.00      13         push_node [8]
+-----------------------------------------------
+                0.00    0.00      13/13          create_list [7]
+[9]      0.0    0.00    0.00      13         create_node [9]
+-----------------------------------------------
+                0.00    0.00       1/7           create_list [7]
+                0.00    0.00       6/7           solve_serial [2]
+[10]     0.0    0.00    0.00       7         pop_node [10]
+-----------------------------------------------
+                0.00    0.00       6/6           main [1]
+[11]     0.0    0.00    0.00       6         freeListElement [11]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[12]     0.0    0.00    0.00       1         read_sudoku [12]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+   [8] push_node             [11] freeListElement         [6] print_sudoku
+   [2] solve_serial          [5] go_forward       		  [12] read_sudoku
+   [9] create_node           [7] create_list              [10] pop_node
+   [4] go_backward        	 [3] possible
+   
+   
+   
+Flat profile:16x16.txt
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 80.78      0.75     0.75 15342639     0.00     0.00  possible
+ 15.08      0.89     0.14        1   140.23   916.51  solve_serial
+  1.62      0.91     0.02   958839     0.00     0.00  go_backward
+  1.08      0.92     0.01   958975     0.00     0.00  go_forward
+  0.00      0.92     0.00       21     0.00     0.00  push_node
+  0.00      0.92     0.00       21     0.00     0.00  create_node
+  0.00      0.92     0.00       16     0.00     0.00  pop_node
+  0.00      0.92     0.00        5     0.00     0.00  freeListElement
+  0.00      0.92     0.00        1     0.00     0.00  create_list
+  0.00      0.92     0.00        1     0.00     0.00  print_sudoku
+  0.00      0.92     0.00        1     0.00     0.00  read_sudoku
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 1.09% of 0.92 seconds
+
+index % time    self  children    called     name
+                0.14    0.78       1/1           main [2]
+[1]    100.0    0.14    0.78       1         solve_serial [1]
+                0.75    0.00 15342543/15342639     possible [3]
+                0.02    0.00  958839/958839      go_backward [4]
+                0.01    0.00  958969/958975      go_forward [5]
+                0.00    0.00       1/1           create_list [6]
+                0.00    0.00      11/16          pop_node [9]
+-----------------------------------------------
+                                                 <spontaneous>
+[2]    100.0    0.00    0.92                 main [2]
+                0.14    0.78       1/1           solve_serial [1]
+                0.00    0.00       5/5           freeListElement [10]
+                0.00    0.00       1/1           read_sudoku [12]
+                0.00    0.00       1/1           print_sudoku [11]
+-----------------------------------------------
+                0.00    0.00      96/15342639     create_list [6]
+                0.75    0.00 15342543/15342639     solve_serial [1]
+[3]     82.0    0.75    0.00 15342639         possible [3]
+-----------------------------------------------
+                0.02    0.00  958839/958839      solve_serial [1]
+[4]      1.6    0.02    0.00  958839         go_backward [4]
+-----------------------------------------------
+                0.00    0.00       6/958975      create_list [6]
+                0.01    0.00  958969/958975      solve_serial [1]
+[5]      1.1    0.01    0.00  958975         go_forward [5]
+-----------------------------------------------
+                0.00    0.00       1/1           solve_serial [1]
+[6]      0.0    0.00    0.00       1         create_list [6]
+                0.00    0.00      96/15342639     possible [3]
+                0.00    0.00       6/958975      go_forward [5]
+                0.00    0.00      21/21          create_node [8]
+                0.00    0.00      21/21          push_node [7]
+                0.00    0.00       5/16          pop_node [9]
+-----------------------------------------------
+                0.00    0.00      21/21          create_list [6]
+[7]      0.0    0.00    0.00      21         push_node [7]
+-----------------------------------------------
+                0.00    0.00      21/21          create_list [6]
+[8]      0.0    0.00    0.00      21         create_node [8]
+-----------------------------------------------
+                0.00    0.00       5/16          create_list [6]
+                0.00    0.00      11/16          solve_serial [1]
+[9]      0.0    0.00    0.00      16         pop_node [9]
+-----------------------------------------------
+                0.00    0.00       5/5           main [2]
+[10]     0.0    0.00    0.00       5         freeListElement [10]
+-----------------------------------------------
+                0.00    0.00       1/1           main [2]
+[11]     0.0    0.00    0.00       1         print_sudoku [11]
+-----------------------------------------------
+                0.00    0.00       1/1           main [2]
+[12]     0.0    0.00    0.00       1         read_sudoku [12]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+   [7] push_node             [10] freeListElement        [11] print_sudoku
+   [1] solve_serial          [5] go_forward       [12] read_sudoku
+   [8] create_node           [6] create_list          [9] pop_node
+   [4] go_backward        	 [3] possible
+   
+   
+   
+Flat profile:25x25.txt
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 91.37      3.96     3.96 65118044     0.00     0.00  possible
+  7.17      4.27     0.31        1     0.31     4.32  solve_serial
+  1.04      4.31     0.05  2604653     0.00     0.00  go_backward
+  0.23      4.32     0.01  2604772     0.00     0.00  go_forward
+  0.00      4.32     0.00       42     0.00     0.00  push_node
+  0.00      4.32     0.00       42     0.00     0.00  create_node
+  0.00      4.32     0.00       25     0.00     0.00  freeListElement
+  0.00      4.32     0.00       17     0.00     0.00  pop_node
+  0.00      4.32     0.00        1     0.00     0.00  create_list
+  0.00      4.32     0.00        1     0.00     0.00  print_sudoku
+  0.00      4.32     0.00        1     0.00     0.00  read_sudoku
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.23% of 4.32 seconds
+
+index % time    self  children    called     name
+                0.31    4.01       1/1           main [2]
+[1]    100.0    0.31    4.01       1         solve_serial [1]
+                3.96    0.00 65117619/65118044     possible [3]
+                0.05    0.00 2604653/2604653     go_backward [4]
+                0.01    0.00 2604755/2604772     go_forward [5]
+                0.00    0.00       1/1           create_list [6]
+                0.00    0.00       1/17          pop_node [10]
+-----------------------------------------------
+                                                 <spontaneous>
+[2]    100.0    0.00    4.32                 main [2]
+                0.31    4.01       1/1           solve_serial [1]
+                0.00    0.00      25/25          freeListElement [9]
+                0.00    0.00       1/1           read_sudoku [12]
+                0.00    0.00       1/1           print_sudoku [11]
+-----------------------------------------------
+                0.00    0.00     425/65118044     create_list [6]
+                3.96    0.00 65117619/65118044     solve_serial [1]
+[3]     91.5    3.96    0.00 65118044         possible [3]
+-----------------------------------------------
+                0.05    0.00 2604653/2604653     solve_serial [1]
+[4]      1.0    0.05    0.00 2604653         go_backward [4]
+-----------------------------------------------
+                0.00    0.00      17/2604772     create_list [6]
+                0.01    0.00 2604755/2604772     solve_serial [1]
+[5]      0.2    0.01    0.00 2604772         go_forward [5]
+-----------------------------------------------
+                0.00    0.00       1/1           solve_serial [1]
+[6]      0.0    0.00    0.00       1         create_list [6]
+                0.00    0.00     425/65118044     possible [3]
+                0.00    0.00      17/2604772     go_forward [5]
+                0.00    0.00      42/42          create_node [8]
+                0.00    0.00      42/42          push_node [7]
+                0.00    0.00      16/17          pop_node [10]
+-----------------------------------------------
+                0.00    0.00      42/42          create_list [6]
+[7]      0.0    0.00    0.00      42         push_node [7]
+-----------------------------------------------
+                0.00    0.00      42/42          create_list [6]
+[8]      0.0    0.00    0.00      42         create_node [8]
+-----------------------------------------------
+                0.00    0.00      25/25          main [2]
+[9]      0.0    0.00    0.00      25         freeListElement [9]
+-----------------------------------------------
+                0.00    0.00       1/17          solve_serial [1]
+                0.00    0.00      16/17          create_list [6]
+[10]     0.0    0.00    0.00      17         pop_node [10]
+-----------------------------------------------
+                0.00    0.00       1/1           main [2]
+[11]     0.0    0.00    0.00       1         print_sudoku [11]
+-----------------------------------------------
+                0.00    0.00       1/1           main [2]
+[12]     0.0    0.00    0.00       1         read_sudoku [12]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+   [7] push_node              [9] freeListElement  		[11] print_sudoku
+   [1] solve_serial           [5] go_forward       		[12] read_sudoku
+   [8] create_node            [6] create_list         	[10] pop_node
+   [4] go_backward        	  [3] possible
+   
+   
+   
+   
+Flat profile:64x64.txt
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 91.16     40.47    40.47 293394233     0.00     0.00  possible
+  6.63     43.41     2.94        1     2.94    44.29  solve_serial
+  1.31     43.99     0.58  4584013     0.00     0.00  go_backward
+  0.65     44.28     0.29  4584415     0.00     0.00  go_forward
+  0.03     44.30     0.02        1     0.02     0.02  print_sudoku
+  0.02     44.31     0.01      177     0.00     0.00  create_node
+  0.00     44.31     0.00      177     0.00     0.00  push_node
+  0.00     44.31     0.00      177     0.00     0.00  pop_node
+  0.00     44.31     0.00        1     0.00     0.01  create_list
+  0.00     44.31     0.00        1     0.00     0.00  read_sudoku
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.02% of 44.31 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]    100.0    0.00   44.31                 main [1]
+                2.94   41.35       1/1           solve_serial [2]
+                0.02    0.00       1/1           print_sudoku [6]
+                0.00    0.00       1/1           read_sudoku [11]
+-----------------------------------------------
+                2.94   41.35       1/1           main [1]
+[2]    100.0    2.94   41.35       1         solve_serial [2]
+               40.47    0.00 293386937/293394233     possible [3]
+                0.58    0.00 4584013/4584013     go_backward [4]
+                0.29    0.00 4584302/4584415     go_forward [5]
+                0.00    0.01       1/1           create_list [7]
+                0.00    0.00      64/177         pop_node [10]
+-----------------------------------------------
+                0.00    0.00    7296/293394233     create_list [7]
+               40.47    0.00 293386937/293394233     solve_serial [2]
+[3]     91.3   40.47    0.00 293394233         possible [3]
+-----------------------------------------------
+                0.58    0.00 4584013/4584013     solve_serial [2]
+[4]      1.3    0.58    0.00 4584013         go_backward [4]
+-----------------------------------------------
+                0.00    0.00     113/4584415     create_list [7]
+                0.29    0.00 4584302/4584415     solve_serial [2]
+[5]      0.7    0.29    0.00 4584415         go_forward [5]
+-----------------------------------------------
+                0.02    0.00       1/1           main [1]
+[6]      0.0    0.02    0.00       1         print_sudoku [6]
+-----------------------------------------------
+                0.00    0.01       1/1           solve_serial [2]
+[7]      0.0    0.00    0.01       1         create_list [7]
+                0.01    0.00     177/177         create_node [8]
+                0.00    0.00    7296/293394233     possible [3]
+                0.00    0.00     113/4584415     go_forward [5]
+                0.00    0.00     177/177         push_node [9]
+                0.00    0.00     113/177         pop_node [10]
+-----------------------------------------------
+                0.01    0.00     177/177         create_list [7]
+[8]      0.0    0.01    0.00     177         create_node [8]
+-----------------------------------------------
+                0.00    0.00     177/177         create_list [7]
+[9]      0.0    0.00    0.00     177         push_node [9]
+-----------------------------------------------
+                0.00    0.00      64/177         solve_serial [2]
+                0.00    0.00     113/177         create_list [7]
+[10]     0.0    0.00    0.00     177         pop_node [10]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[11]     0.0    0.00    0.00       1         read_sudoku [11]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2014 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+   [9] push_node              [5] go_forward       [11] read_sudoku
+   [2] solve_serial           [7] create_list      [10] pop_node
+   [8] create_node            [3] possible
+   [4] go_backward            [6] print_sudoku   
